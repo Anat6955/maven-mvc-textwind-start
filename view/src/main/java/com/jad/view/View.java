@@ -31,11 +31,11 @@ public class View implements IView {
 
     @Override
     public void display() {
-        Screen screen = this.model.getScreen(new Dimension(100, 50));
+        Screen screen = this.model.getScreen(new Dimension(50, 50));
         StringBuilder screenTxt = new StringBuilder();
         for (int y = 0; y < screen.getHeight(); y++) {
             for (int x = 0; x < screen.getWidth(); x++) {
-                screenTxt.append(screen.getPixelAt(x, y).obstacle() ? "█" : " ");
+                screenTxt.append(screen.getPixelAt(x, y).obstacle() ? "██" : "  ");
             }
             screenTxt.append("\n");
         }
