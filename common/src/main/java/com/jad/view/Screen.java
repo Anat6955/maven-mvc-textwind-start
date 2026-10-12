@@ -16,7 +16,7 @@ public record Screen(Dimension dimension, Pixel[][] pixels) {
     }
 
     Pixel getPixelAt(final int x, final int y) {
-        if ((x < 0) || (x > this.dimension.width) || (y < 0) || (y > this.dimension.height)) {
+        if ((x < 0) || (x >= this.dimension.width) || (y < 0) || (y >= this.dimension.height)) {
             throw new IllegalArgumentException("Position (" + x + ", " + y + ") is out of range.");
         }
         return this.pixels[y][x];

@@ -17,9 +17,9 @@ public class View implements IView {
         this.model = model;
         TextWindowSettings textWindowSettings = new TextWindowSettings();
         textWindowSettings.setTitle("XenoJava");
-        textWindowSettings.setScreenHeight(50);
-        textWindowSettings.setScreenWidth(100);
-        textWindowSettings.setFontSize(12f);
+        textWindowSettings.setScreenHeight(100);
+        textWindowSettings.setScreenWidth(300);
+        textWindowSettings.setFontSize(6f);
         this.textWindow = new TextWindow(textWindowSettings);
         this.textWindow.setVisible(true);
     }
@@ -31,7 +31,7 @@ public class View implements IView {
 
     @Override
     public void display() {
-        Screen screen = this.model.getScreen(new Dimension(50, 50));
+        Screen screen = this.model.getScreen(new Dimension(150, 100));
         StringBuilder screenTxt = new StringBuilder();
         for (int y = 0; y < screen.getHeight(); y++) {
             for (int x = 0; x < screen.getWidth(); x++) {

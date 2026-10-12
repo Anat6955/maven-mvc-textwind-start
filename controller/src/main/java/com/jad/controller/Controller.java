@@ -16,6 +16,14 @@ public class Controller implements IController {
 
     @Override
     public void proceed() {
-        this.view.display();
+        this.model.loadMaze("level1.txt");
+        for (; ; ) {
+            try {
+                Thread.sleep(1);
+                this.view.display();
+            } catch (InterruptedException ie) {
+                Thread.currentThread().interrupt();
+            }
+        }
     }
 }
